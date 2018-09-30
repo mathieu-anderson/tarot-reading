@@ -1,0 +1,16 @@
+.Table-container {
+  margin: 4vh 4vw 4vh 4vw;
+  display: flex;
+  justify-content: center;
+}
+
+.Table-draw {
+  width: 10vw;
+  border: 1px solid green;
+  padding: 1%;
+}
+
+.Table-cards {
+  display: flex;
+  flex-direction: column;
+}

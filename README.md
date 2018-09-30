@@ -1,0 +1,3 @@
+## tarot-reading
+
+Psychomagical utility.
