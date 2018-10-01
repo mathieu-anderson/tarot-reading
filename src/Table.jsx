@@ -1,29 +1,45 @@
 import React, { Component } from 'react';
 import { knuthShuffle as shuffle } from 'knuth-shuffle';
 
-import { cards, numbers } from './cards';
+import { cards } from './cards';
 
 import './Table.css';
 
-const getShuffledDeck = () => shuffle(cards.slice(0));
-const getRandomNumber = () => shuffle(numbers.slice(0))[0];
-const getRandomCard = () => {
-  console.log('deck', getShuffledDeck());
-  console.log('number', getRandomNumber());
-  console.log('card', getShuffledDeck()[getRandomNumber()]);
-  // getShuffledDeck()[getRandomNumber()]
+const getRange = (low, hi) => {
+  function rangeRec (low, hi, vals) {
+    if (low > hi) return vals;
+    vals.push(low);
+    return rangeRec(low + 1, hi, vals);
+  }
+  return rangeRec(low, hi, []);
 };
+
+const getShuffledDeck = (deck) => shuffle(deck.slice(0));
+const removeFromDeck = (deck, toRemove) => deck.filter(card => card.id !== toRemove.id);
+const getRandomNumber = (max) => shuffle(getRange(0, max).slice(0))[0];
+const getRandomCard = (deck) => getShuffledDeck(deck)[getRandomNumber(deck.length - 1)];
 
 export class Table extends Component {
   constructor (props) {
     super(props);
-    this.state = { cards: [] };
+    this.state = {
+      deck: cards,
+      cards: []
+    };
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick () {
+    if (this.state.deck.length <= 0) {
+      return window.alert('The deck is empty');
+    }
+
+    const card = getRandomCard(this.state.deck);
+    const nextDeck = removeFromDeck(this.state.deck, card);
+
     this.setState({
-      cards: [...this.state.cards, getRandomCard()]
+      deck: nextDeck,
+      cards: [...this.state.cards, card]
     });
   }
 
@@ -37,7 +53,7 @@ export class Table extends Component {
         </div>
         <div className='Table-cards'>
           {
-            // this.state.cards.map((card, index) => <div key={index}>{card.name} {card.number}</div>)
+            this.state.cards.map((card, index) => <div key={index}>{card.name} {card.number}</div>)
           }
         </div>
       </React.Fragment>
