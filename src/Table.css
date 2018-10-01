@@ -1,5 +1,4 @@
 .Table-container {
-  margin: 4vh 4vw 4vh 4vw;
   display: flex;
   justify-content: center;
 }
@@ -10,7 +9,7 @@
   padding: 1%;
 }
 
-.Table-cards {
+.Table-cards, .Table-buttons {
   display: flex;
   flex-direction: column;
 }
