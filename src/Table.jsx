@@ -26,10 +26,11 @@ export class Table extends Component {
       deck: cards,
       cards: []
     };
-    this.handleClick = this.handleClick.bind(this);
+    this.handleDraw = this.handleDraw.bind(this);
+    this.handleShuffle = this.handleShuffle.bind(this);
   }
 
-  handleClick () {
+  handleDraw () {
     if (this.state.deck.length <= 0) {
       return window.alert('The deck is empty');
     }
@@ -43,12 +44,24 @@ export class Table extends Component {
     });
   }
 
+  handleShuffle () {
+    this.setState({
+      deck: getShuffledDeck(cards),
+      cards: []
+    });
+  }
+
   render () {
     return (
       <React.Fragment>
         <div className='Table-container'>
-          <div className='Table-draw' onClick={this.handleClick}>
-          Draw a card
+          <div className='Table-buttons'>
+            <div className='Table-reset' onClick={this.handleShuffle}>
+              Reshuffle deck
+            </div>
+            <div className='Table-draw' onClick={this.handleDraw}>
+              Draw a card
+            </div>
           </div>
         </div>
         <div className='Table-cards'>
