@@ -32,7 +32,7 @@ export class Table extends Component {
 
   handleDraw () {
     if (this.state.deck.length <= 0) {
-      return window.alert('The deck is empty');
+      return window.alert('The deck is empty, please shuffle.');
     }
 
     const card = getRandomCard(this.state.deck);
@@ -57,7 +57,7 @@ export class Table extends Component {
         <div className='Table-container'>
           <div className='Table-buttons'>
             <div className='Table-reset' onClick={this.handleShuffle}>
-              Reshuffle deck
+              Shuffle deck
             </div>
             <div className='Table-draw' onClick={this.handleDraw}>
               Draw a card
