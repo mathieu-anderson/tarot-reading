@@ -1,133 +1,133 @@
 export const cards = [
   {
-    id: 'mat',
-    name: 'Le Mat',
-    number: null,
+    id: 'fool',
+    name: 'The Fool',
+    number: 0,
     attributes: ['one', 'two']
   },
   {
-    id: 'bateleur',
-    name: 'Le Bateleur',
+    id: 'magician',
+    name: 'The Magician',
     number: 1,
     attributes: ['one', 'two']
   },
   {
-    id: 'papesse',
-    name: 'La Papesse',
+    id: 'priestess',
+    name: 'The High Priestess',
     number: 2,
     attributes: ['one', 'two']
   },
   {
-    id: 'imperatrice',
-    name: 'L\'Impératrice',
+    id: 'empress',
+    name: 'The Empress',
     number: 3,
     attributes: ['one', 'two']
   },
   {
-    id: 'empereur',
-    name: 'L\'Empereur',
+    id: 'emperor',
+    name: 'The Emperor',
     number: 4,
     attributes: ['one', 'two']
   },
   {
-    id: 'pape',
-    name: 'Le Pape',
+    id: 'hierophant',
+    name: 'The Hierophant',
     number: 5,
     attributes: ['one', 'two']
   },
   {
-    id: 'amoureux',
-    name: 'L\'Amoureux',
+    id: 'lovers',
+    name: 'The Lovers',
     number: 6,
     attributes: ['one', 'two']
   },
   {
     id: 'chariot',
-    name: 'Le Chariot',
+    name: 'The Chariot',
     number: 7,
     attributes: ['one', 'two']
   },
   {
     id: 'justice',
-    name: 'La Justice',
+    name: 'Justice',
     number: 8,
     attributes: ['one', 'two']
   },
   {
-    id: 'hermite',
-    name: 'L\'Hermite',
+    id: 'hermit',
+    name: 'The Hermit',
     number: 9,
     attributes: ['one', 'two']
   },
   {
     id: 'fortune',
-    name: 'La Roue de Fortune',
+    name: 'Wheel of Fortune',
     number: 10,
     attributes: ['one', 'two']
   },
   {
-    id: 'force',
-    name: 'La Force',
+    id: 'strength',
+    name: 'Strength',
     number: 11,
     attributes: ['one', 'two']
   },
   {
-    id: 'pendu',
-    name: 'Le Pendu',
+    id: 'hanged',
+    name: 'The Hanged Man',
     number: 12,
     attributes: ['one', 'two']
   },
   {
-    id: 'treize',
-    name: null,
+    id: 'death',
+    name: 'Death',
     number: 13,
     attributes: ['one', 'two']
   },
   {
     id: 'temperance',
-    name: 'Tempérance',
+    name: 'Temperance',
     number: 14,
     attributes: ['one', 'two']
   },
   {
-    id: 'diable',
-    name: 'Le Diable',
+    id: 'devil',
+    name: 'The Devil',
     number: 15,
     attributes: ['one', 'two']
   },
   {
-    id: 'maison',
-    name: 'La Maison Dieu',
+    id: 'tower',
+    name: 'The Tower',
     number: 16,
     attributes: ['one', 'two']
   },
   {
-    id: 'etoile',
-    name: 'L\'Étoile',
+    id: 'star',
+    name: 'The Star',
     number: 17,
     attributes: ['one', 'two']
   },
   {
-    id: 'lune',
-    name: 'La Lune',
+    id: 'moon',
+    name: 'The Moon',
     number: 18,
     attributes: ['one', 'two']
   },
   {
-    id: 'soleil',
-    name: 'Le Soleil',
+    id: 'sun',
+    name: 'The Sun',
     number: 19,
     attributes: ['one', 'two']
   },
   {
-    id: 'jugement',
-    name: 'Le Jugement',
+    id: 'judgement',
+    name: 'Judgement',
     number: 20,
     attributes: ['one', 'two']
   },
   {
-    id: 'monde',
-    name: 'Le Monde',
+    id: 'world',
+    name: 'The World',
     number: 21,
     attributes: ['one', 'two']
   }
