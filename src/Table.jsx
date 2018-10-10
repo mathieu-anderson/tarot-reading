@@ -3,6 +3,7 @@ import { knuthShuffle as shuffle } from 'knuth-shuffle';
 
 import { cards } from './cards';
 
+import assets from './assets';
 import './Table.css';
 
 const getRange = (low, hi) => {
@@ -18,6 +19,13 @@ const getShuffledDeck = (deck) => shuffle(deck.slice(0));
 const removeFromDeck = (deck, toRemove) => deck.filter(card => card.id !== toRemove.id);
 const getRandomNumber = (max) => shuffle(getRange(0, max).slice(0))[0];
 const getRandomCard = (deck) => getShuffledDeck(deck)[getRandomNumber(deck.length - 1)];
+
+const Card = ({ card, image }) => {
+  return <React.Fragment>
+    {image}
+    <div>{card.name} {card.number}</div>
+  </React.Fragment>;
+};
 
 export class Table extends Component {
   constructor (props) {
@@ -66,7 +74,11 @@ export class Table extends Component {
         </div>
         <div className='Table-cards'>
           {
-            this.state.cards.map((card, index) => <div key={index}>{card.name} {card.number}</div>)
+            this.state.cards.map((card, index) => {
+              return <div key={card.id + index}>
+                <Card card={card} image={assets[card.id]} />
+              </div>;
+            })
           }
         </div>
       </React.Fragment>
