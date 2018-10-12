@@ -72,13 +72,13 @@ export const cards = [
     reversed: ['lack of control and direction', 'arrogance', 'ruthlessness', 'aggression']
   },
   {
-    id: 'justice',
-    name: 'Justice',
+    id: 'strength',
+    name: 'Strength',
     number: 8,
-    element: 'Air',
-    astro: 'Leo',
-    upright: ['fairness', 'decision', 'truth', 'cause and effect', 'law'],
-    reversed: ['unfairness', 'lack of accountability', 'lie', 'dishonesty']
+    element: 'Fire',
+    astro: 'Libra',
+    upright: ['courage', 'patience', 'control', 'compassion'],
+    reversed: ['weakness', 'self-doubt', 'violence', 'lack of discipline']
   },
   {
     id: 'hermit',
@@ -99,13 +99,13 @@ export const cards = [
     reversed: ['bad luck', 'external forces', 'instability', 'out of control']
   },
   {
-    id: 'strength',
-    name: 'Strength',
+    id: 'justice',
+    name: 'Justice',
     number: 11,
-    element: 'Fire',
-    astro: 'Libra',
-    upright: ['courage', 'patience', 'control', 'compassion'],
-    reversed: ['weakness', 'self-doubt', 'violence', 'lack of discipline']
+    element: 'Air',
+    astro: 'Leo',
+    upright: ['fairness', 'decision', 'truth', 'cause and effect', 'law'],
+    reversed: ['unfairness', 'lack of accountability', 'lie', 'dishonesty']
   },
   {
     id: 'hanged',
