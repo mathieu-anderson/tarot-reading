@@ -43,7 +43,7 @@ class Card extends PureComponent {
           : <div className='Table-card-reversed'>{assets[card.id]}</div>
       }
       <h3>
-        {card.number} - {card.id}
+        {card.number} - {card.name}
       </h3>
       <h4 />
       <div className='Table-card-description'>
