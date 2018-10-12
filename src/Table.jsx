@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, PureComponent } from 'react';
 import { knuthShuffle as shuffle } from 'knuth-shuffle';
 
 import { cards } from './cards';
 
 import assets from './assets';
-import './Table.css';
+import './Table.scss';
 
 const getRange = (low, hi) => {
   function rangeRec (low, hi, vals) {
@@ -19,13 +19,53 @@ const getShuffledDeck = (deck) => shuffle(deck.slice(0));
 const removeFromDeck = (deck, toRemove) => deck.filter(card => card.id !== toRemove.id);
 const getRandomNumber = (max) => shuffle(getRange(0, max).slice(0))[0];
 const getRandomCard = (deck) => getShuffledDeck(deck)[getRandomNumber(deck.length - 1)];
+const getRandomOrientation = () => shuffle(['upright', 'reversed'])[0];
 
-const Card = ({ card, image }) => {
-  return <React.Fragment>
-    {image}
-    <div>{card.name} {card.number}</div>
-  </React.Fragment>;
-};
+class Card extends PureComponent {
+  render () {
+    const { card, title } = this.props;
+    const orientation = getRandomOrientation();
+
+    if (!card) {
+      return <div className='Table-card'>
+        <h3>
+          {title}
+        </h3>
+      </div>;
+    }
+    return <div className='Table-card'>
+      <h3>
+        {title}
+      </h3>
+      {
+        orientation === 'upright'
+          ? assets[card.id]
+          : <div className='Table-card-reversed'>{assets[card.id]}</div>
+      }
+      <h3>
+        {card.number} - {card.id}
+      </h3>
+      <h4 />
+      <div className='Table-card-description'>
+        <div>
+          <b>Element</b>: {card.element}
+        </div>
+        <div>
+          <b>Astrology</b>: {card.astro}
+        </div>
+        {
+          orientation === 'upright'
+            ? <div>
+              <b>{orientation}</b>: {card.upright[getRandomNumber(card.upright.length - 1)]}
+            </div>
+            : <div>
+              <b>{orientation}</b>: {card.reversed[getRandomNumber(card.reversed.length - 1)]}
+            </div>
+        }
+      </div>
+    </div>;
+  }
+}
 
 export class Table extends Component {
   constructor (props) {
@@ -60,6 +100,8 @@ export class Table extends Component {
   }
 
   render () {
+    const drawnCards = this.state.cards;
+
     return (
       <React.Fragment>
         <div className='Table-container'>
@@ -73,13 +115,10 @@ export class Table extends Component {
           </div>
         </div>
         <div className='Table-cards'>
-          {
-            this.state.cards.map((card, index) => {
-              return <div key={card.id + index}>
-                <Card card={card} image={assets[card.id]} />
-              </div>;
-            })
-          }
+          <Card card={drawnCards[0]} title='Inside' />
+          <Card card={drawnCards[1]} title='Outside' />
+          <Card card={drawnCards[2]} title='Communication' />
+          <Card card={drawnCards[3]} title='Result' />
         </div>
       </React.Fragment>
     );
