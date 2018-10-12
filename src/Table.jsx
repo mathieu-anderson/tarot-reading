@@ -109,16 +109,23 @@ export class Table extends Component {
             <div className='Table-reset' onClick={this.handleShuffle}>
               Shuffle deck
             </div>
-            <div className='Table-draw' onClick={this.handleDraw}>
-              Draw a card
-            </div>
+            {
+              drawnCards.length < 4
+                ? <div className='Table-draw' onClick={this.handleDraw}>
+                  Draw a card
+                </div>
+                : <div className='Table-draw inactive'>
+                  Draw a card
+                </div>
+            }
+
           </div>
         </div>
         <div className='Table-cards'>
           <Card card={drawnCards[0]} title='Inside' />
           <Card card={drawnCards[1]} title='Outside' />
           <Card card={drawnCards[2]} title='Communication' />
-          <Card card={drawnCards[3]} title='Result' />
+          <Card card={drawnCards[3]} title='Outcome' />
         </div>
       </React.Fragment>
     );

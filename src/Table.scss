@@ -49,6 +49,15 @@ h3 {
       top: 1rem;
     }
   }
+
+  &.inactive {
+    box-shadow: none;
+    background-color: rgb(227, 226, 226);
+    color:grey;
+    &:hover {
+      cursor: default;
+    }
+  }
 }
 
 // .Table-draw, .Table-reset {
