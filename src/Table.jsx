@@ -56,10 +56,10 @@ class Card extends PureComponent {
         {
           orientation === 'upright'
             ? <div>
-              <b>{orientation}</b>: {card.upright[getRandomNumber(card.upright.length - 1)]}
+              <b>Key</b>: {card.upright[getRandomNumber(card.upright.length - 1)]}
             </div>
             : <div>
-              <b>{orientation}</b>: {card.reversed[getRandomNumber(card.reversed.length - 1)]}
+              <b>Key</b>: {card.reversed[getRandomNumber(card.reversed.length - 1)]}
             </div>
         }
       </div>
