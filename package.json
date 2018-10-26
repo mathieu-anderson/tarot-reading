@@ -6,8 +6,8 @@
     "base64-img": "^1.0.4",
     "knuth-shuffle": "^1.0.8",
     "node-sass": "^4.9.3",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
+    "react": "^16.7.0-alpha.0",
+    "react-dom": "^16.7.0-alpha.0",
     "react-scripts": "2.0.3"
   },
   "scripts": {
