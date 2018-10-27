@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
 
-import App from './App';
+import Loading from './Loading';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const App = lazy(() => import ('./App'));
+
+ReactDOM.render(
+  <Suspense fallback={<Loading />}>
+    <App />
+  </Suspense>
+  , document.getElementById('root')
+);
+
 registerServiceWorker();
