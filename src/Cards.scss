@@ -1,0 +1,29 @@
+.Table-cards {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.Table-card {
+  background-color: white;
+  flex: 0 0 199px;
+  min-height: 540px;
+  box-shadow: 0 20px 50px #ddd;
+  margin: 1%;
+  padding: 1%;
+  text-transform:capitalize;
+}
+
+.Table-card-reversed {
+  transform: scale(-1, -1);
+}
+
+.Table-card-description {
+  margin-left: 12%;
+}
+
+.Table-cards {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
