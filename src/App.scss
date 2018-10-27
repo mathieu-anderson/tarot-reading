@@ -1,8 +1,15 @@
+body {
+  background-color: #eeeeee;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
 h3 {
   text-align: center;
 }
 
-.Table-container, .Table-buttons {
+.Table-buttons {
   display: flex;
   text-align: center;
   justify-content: center;
@@ -58,37 +65,4 @@ h3 {
       cursor: default;
     }
   }
-}
-
-// .Table-draw, .Table-reset {
-//   background-color: #fafafa;
-//   flex: 0 0 100px;
-//   cursor: pointer;
-//   box-shadow: 0px 10px 1px #ddd, 0 10px 20px #ccc;
-//   margin: 1em;
-//   padding: 1em;
-// }
-
-.Table-card {
-  background-color: white;
-  flex: 0 0 199px;
-  min-height: 540px;
-  box-shadow: 0 20px 50px #ddd;
-  margin: 1%;
-  padding: 1%;
-  text-transform:capitalize;
-}
-
-.Table-card-reversed {
-  transform: scale(-1, -1);
-}
-
-.Table-card-description {
-  margin-left: 12%;
-}
-
-.Table-cards {
-  display: flex;
-  justify-content: center;
-  flex-flow: row wrap;
 }
