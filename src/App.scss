@@ -9,13 +9,13 @@ h3 {
   text-align: center;
 }
 
-.Table-buttons {
+.buttons {
   display: flex;
   text-align: center;
   justify-content: center;
 }
 
-.Table-draw, .Table-reset {
+.button-draw, .button-reset {
   margin: 1em;
   padding: 1em;
   background-color: white;
@@ -65,4 +65,19 @@ h3 {
       cursor: default;
     }
   }
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  text-align: center;
+}
+
+.card-placeholder {
+  margin: 2%;
+  height: 250px;
+  width: 147px;
+  border: 1px solid white;
+  box-shadow: 0 20px 50px #ddd;
 }

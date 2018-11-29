@@ -6,6 +6,8 @@ import Card from './Card';
 import { cardsData } from './cardsData';
 import './App.scss';
 
+const cardPlaceholder = <div className='card-placeholder' />;
+
 const App = () => {
   const [deck, setDeck] = useState(cardsData);
   const [drawnCards, setDrawnCards] = useState([]);
@@ -29,27 +31,27 @@ const App = () => {
 
   return (
     <div className='App'>
-      <section className='Table-buttons'>
-        <div className='Table-reset' onClick={handleShuffle}>
+      <section className='buttons'>
+        <div className='button-reset' onClick={handleShuffle}>
             Shuffle deck
         </div>
         {
           drawnCards.length < 4
-            ? <div className='Table-draw' onClick={handleDraw}>
+            ? <div className='button-draw' onClick={handleDraw}>
                 Draw a card
             </div>
-            : <div className='Table-draw inactive'>
+            : <div className='button-draw inactive'>
                 Draw a card
             </div>
         }
 
       </section>
 
-      <section className='Table-cards'>
-        <Card card={drawnCards[0]} title='Inside' />
-        <Card card={drawnCards[1]} title='Outside' />
-        <Card card={drawnCards[2]} title='Communication' />
-        <Card card={drawnCards[3]} title='Outcome' />
+      <section className='cards'>
+        { drawnCards[0] ? <Card card={drawnCards[0]} /> : cardPlaceholder }
+        { drawnCards[1] ? <Card card={drawnCards[1]} /> : cardPlaceholder }
+        { drawnCards[2] ? <Card card={drawnCards[2]} /> : cardPlaceholder }
+        { drawnCards[3] ? <Card card={drawnCards[3]} /> : cardPlaceholder }
       </section>
 
     </div>

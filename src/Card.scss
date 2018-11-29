@@ -1,29 +1,31 @@
-.Table-cards {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-}
-
-.Table-card {
-  background-color: white;
-  flex: 0 0 199px;
-  min-height: 540px;
-  box-shadow: 0 20px 50px #ddd;
-  margin: 1%;
-  padding: 1%;
+.card {
+  margin: 2%;
   text-transform:capitalize;
+  height: 250px;
+  width: 147px;
+
+  img {
+    height: 250px;
+    width: 147px;
+    box-shadow: 0 20px 50px #ddd;
+  }
 }
 
-.Table-card-reversed {
-  transform: scale(-1, -1);
+.card-reversed {
+  transform: rotate(180deg);
 }
 
-.Table-card-description {
+.card-description {
   margin-left: 12%;
 }
 
-.Table-cards {
-  display: flex;
-  justify-content: center;
-  flex-flow: row wrap;
+.card-flipped {
+  margin: 2%;
+
+  img {
+    height: 250px;
+    width: 147px;
+    box-shadow: 0 20px 50px #ddd;
+    cursor: pointer;
+  }
 }
